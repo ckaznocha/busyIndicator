@@ -3,7 +3,7 @@ package busyIndicator_test
 import (
 	"time"
 
-	"github.com/ckaznocha/terminal"
+	"github.com/ckaznocha/busyIndicator"
 )
 
 func ExampleThrobber() {
