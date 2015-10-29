@@ -104,13 +104,20 @@ func replaceLineAfter(
 	s []byte,
 	wait time.Duration,
 ) {
+	var err error
 	defer buffer.Flush()
-	buffer.WriteString(fmt.Sprintf(
+	_, err = buffer.WriteString(fmt.Sprintf(
 		"%s%s",
 		bytes.Repeat(backSpace, len(s)),
 		clearFromCursor,
 	))
-	buffer.Write(s)
+	if err != nil {
+		return
+	}
+	_, err = buffer.Write(s)
+	if err != nil {
+		return
+	}
 	time.Sleep(wait)
 }
 

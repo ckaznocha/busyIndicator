@@ -1,14 +1,6 @@
 # busyIndicator
-
-[![Build Status](http://img.shields.io/travis/ckaznocha/busyIndicator.svg?style=flat)](https://travis-ci.org/ckaznocha/busyIndicator)
-[![License](http://img.shields.io/:license-mit-blue.svg)](http://ckaznocha.mit-license.org)
-
-This is mostly a `for-fun` project as an excuse to mess with some things I don't
-normally have a reason to use. There are other similar projects that may be more
-mature.
-
 --
-    import "github.com/ckaznocha/terminal"
+    import "github.com/ckaznocha/busyIndicator"
 
 
 ## Usage
@@ -30,8 +22,25 @@ var (
 #### func  Progress
 
 ```go
-func Progress()
+func Progress(
+	marks ProgressMarks,
+	progress chan float64,
+	cancel chan bool,
+)
 ```
+Progress starts a progress bar
+
+#### func  ProgressAnimated
+
+```go
+func ProgressAnimated(
+	marks ProgressMarks,
+	speed time.Duration,
+	progress chan float64,
+	cancel chan bool,
+)
+```
+ProgressAnimated starts an animated progress bar
 
 #### func  Throbber
 
@@ -81,3 +90,14 @@ func ThrobberPrefixedAndPostfixed(
 ```
 ThrobberPrefixedAndPostfixed starts a throbber with a given static prefix and
 postfix
+
+#### type ProgressMarks
+
+```go
+type ProgressMarks struct {
+	Completed  rune
+	Incomplete rune
+}
+```
+
+ProgressMarks holds the runes you'd like to use for your progress bar
