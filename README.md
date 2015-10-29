@@ -1,4 +1,12 @@
 # busyIndicator
+
+[![Build Status](http://img.shields.io/travis/ckaznocha/busyIndicator.svg?style=flat)](https://travis-ci.org/ckaznocha/busyIndicator)
+[![License](http://img.shields.io/:license-mit-blue.svg)](http://ckaznocha.mit-license.org)
+
+This is mostly a `for-fun` project as an excuse to mess with some things I don't
+normally have a reason to use. There are other similar projects that may be more
+mature.
+
 --
     import "github.com/ckaznocha/busyIndicator"
 
